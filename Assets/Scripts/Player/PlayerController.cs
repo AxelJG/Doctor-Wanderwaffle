@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         float moveAxis = Input.GetAxis(moveInputAxis);
         float turnAxis = Input.GetAxis(turnInputAxis);
 
-        ApplyInput(moveAxis, turnAxis);
+        if(!GameManager.Instance.playerActionInprogress) ApplyInput(moveAxis, turnAxis);
     }
 
     private void ApplyInput(float moveInput, float turnInput) {
