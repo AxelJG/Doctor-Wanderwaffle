@@ -16,9 +16,9 @@ public class GameManager : Singleton<GameManager>
     }
 
     //Quitamos efecto resaltado cuando nos alejamos
-    public void DefocusObjects() {
+    public void UnfocusObjects() {
         foreach (GameObject mObj in medicalObjs) {
-            Material m = mObj.GetComponent<MedicalObject>().material;
+            Material m = mObj.GetComponent<ActuatorObject>().material;
             mObj.GetComponent<Renderer>().material = m;
         }
     }

@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator SpawnParticleTrail()
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.1f);
 
         GameObject particle = _dustParticlePool.GetPooledObjectByTag("DustParticleEffect");
 
