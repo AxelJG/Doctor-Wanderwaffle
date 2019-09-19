@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f6e00a237e9e343bb4b1bf40cd1fcd, type: 3}
+  m_Name: 5_Hueso roto
+  m_EditorClassIdentifier: 
+  id: 5
+  timeOfLife: 20
+  difficulty: 3
+  actuators:
+  - {fileID: 11400000, guid: 7b799bb6659d93040bf30683a16196d0, type: 2}
+  - {fileID: 11400000, guid: e08df90548c863b4a95bdc68a32ac13b, type: 2}
+  - {fileID: 11400000, guid: 17aa44569f1f15a42b26e868a3d1e61c, type: 2}
+  - {fileID: 11400000, guid: d9f6cc899b8c2104788c2f2ac743973d, type: 2}
+  - {fileID: 11400000, guid: 86d4cd1a43c83b94e8ed99e357048a7e, type: 2}
+  - {fileID: 11400000, guid: 50c61248d6d530843918c49da8ea0bb1, type: 2}
+  sprite: {fileID: 0}
