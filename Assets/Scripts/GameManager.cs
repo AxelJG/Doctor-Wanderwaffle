@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+    #region VARIABLES
     public Material focusedMaterial;
 
     [Header("UI Level Menus")]
@@ -28,12 +29,15 @@ public class GameManager : Singleton<GameManager>
     public int pathologiesToCure = 1;
     private const int MAXIMUM_LEVELS = 5;
     private int levelsCompleted = 0;
+    #endregion
 
-
+    #region BASE
     private void Update() {
         CountDown();
     }
+    #endregion
 
+    #region Level CountDown
     private void CountDown() {
         if(timeLevel > 0f) {
             timeLevel -= Time.deltaTime;
@@ -49,7 +53,9 @@ public class GameManager : Singleton<GameManager>
         }
 
     }
+    #endregion
 
+    #region Focus in Actuators
     //Resaltar objeto interactuable cuando estamos delante
     public void FocusObject(GameObject obj) {
         obj.GetComponent<Renderer>().material = focusedMaterial;
@@ -62,7 +68,9 @@ public class GameManager : Singleton<GameManager>
             mObj.GetComponent<Renderer>().material = m;
         }
     }
+    #endregion
 
+    #region Patholigies in Level
     //Enfermedades a curar (Va restando)
     public void PathologiesDiscount() {
         pathologiesToCure = pathologiesToCure - 1;
@@ -71,7 +79,9 @@ public class GameManager : Singleton<GameManager>
             WinLevel();
         }
     }
+    #endregion
 
+    #region Game State
     //Nivel superado
     private void WinLevel() {
         levelsCompleted = levelsCompleted + 1;
@@ -98,12 +108,16 @@ public class GameManager : Singleton<GameManager>
         MenuVisibility(menuWinGame, true);
         Pause();
     }
+    #endregion
 
+    #region Menus
     //Visibilidad de los menus del nivel
     private void MenuVisibility(GameObject menu, bool v) {
         menu.SetActive(v);
     }
+    #endregion
 
+    #region Resume/Pause
     //Pausa
     private void Pause() {
         Time.timeScale = 0f;
@@ -113,5 +127,5 @@ public class GameManager : Singleton<GameManager>
     private void Resume() {
         Time.timeScale = 1f;
     }
-
+    #endregion
 }
