@@ -67,9 +67,11 @@ public class PlayerController : MonoBehaviour
 
         GameObject particle = _dustParticlePool.GetPooledObjectByTag("DustParticleEffect");
 
-        particle.transform.position = dustEmitter.position;
-        particle.SetActive(true);
-
+        if (particle != null)
+        {
+            particle.transform.position = dustEmitter.position;
+            particle.SetActive(true);
+        }
 
         if (_moving)
         {

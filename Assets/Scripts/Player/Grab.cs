@@ -111,9 +111,10 @@ public class Grab : MonoBehaviour
     {
         GameManager.Instance.playerActionInprogress = true;
 
-        _progressBarAction.timeMax = time;
-        _progressBarAction.loaded.RemoveAllListeners();
-        _progressBarAction.loaded.AddListener(GrabObject);
+        _progressBarAction.grabObject = true;
+        _progressBarAction.loadingTime = time;
+        /* _progressBarAction.onObjectReadyToGrab.RemoveAllListeners();
+        _progressBarAction.onObjectReadyToGrab.AddListener(GrabObject); */
 
         progressBar.SetActive(true);
     }

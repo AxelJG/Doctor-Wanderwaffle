@@ -6,18 +6,21 @@ using UnityEngine.Events;
 
 public class ProgressBarAction : MonoBehaviour
 {
-    public float timeMax = 1f;
-    public UnityEvent loaded;
+    [HideInInspector]
+    public float loadingTime = 1f;
+    [HideInInspector]
+    public bool grabObject, performAction;
+    public UnityEvent onObjectReadyToGrab, onActionPerformed;
 
-    private float currTime = 0f;
-    private Slider slider;
-    
+    float _curTime = 0f;
+    Slider _slider;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        slider = GetComponent<Slider>();
-        slider.value = 0f;
+        _slider = GetComponent<Slider>();
+        _slider.value = 0f;
     }
 
     // Update is called once per frame
@@ -27,27 +30,46 @@ public class ProgressBarAction : MonoBehaviour
         Progression();
     }
 
-    private void Progression() {
-        if (currTime < timeMax) {
-            currTime += Time.deltaTime;
-            slider.value = currTime / timeMax;
-        } else {
+    private void Progression()
+    {
+        if (_curTime < loadingTime)
+        {
+            _curTime += Time.deltaTime;
+            _slider.value = _curTime / loadingTime;
+        }
+        else
+        {
             gameObject.SetActive(false);
         }
     }
 
-    private void ResetProgressBar() {
-        slider.value = 0f;
-        currTime = 0f;
+    private void ResetProgressBar()
+    {
+        _slider.value = 0f;
+        _curTime = 0f;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         transform.LookAt(Camera.main.transform);
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         ResetProgressBar();
-        loaded.Invoke();
+
+        if (grabObject && onObjectReadyToGrab != null)
+        {
+            onObjectReadyToGrab.Invoke();
+        }
+
+        if (performAction && onActionPerformed != null)
+        {
+            onActionPerformed.Invoke();
+        }
+
+        grabObject = false;
+        performAction = false;
         GameManager.Instance.playerActionInprogress = false;
     }
 }
