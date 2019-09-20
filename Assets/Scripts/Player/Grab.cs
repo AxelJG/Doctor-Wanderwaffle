@@ -7,24 +7,28 @@ public class Grab : MonoBehaviour
     public Transform grabPoint;
     public GameObject progressBar;
 
-    GameObject _grabbedObject;
-    ActuatorObject _observedActuator;
+    GameObject _observedObject;
+    ActuatorObject _grabbedActuator;
     ProgressBarAction _progressBarAction;
     bool _isGrabbingSomething;
 
-    private void Awake()
+    void Awake()
     {
         _progressBarAction = progressBar.GetComponent<ProgressBarAction>();
+    }
+
+    void Start()
+    {
+        InvokeRepeating("ObjDetection", 0.1f, 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ObjDetection();
-
         if (Input.GetButtonDown("Jump"))
-        { //Boton espacio
-            if (ObjDetection() != null)
+        { 
+            //Boton espacio
+            if (_observedObject != null)
             {
                 if (_isGrabbingSomething)
                 {
@@ -33,78 +37,88 @@ public class Grab : MonoBehaviour
 
                 float loadingTime = .25f;
 
-                switch (_observedActuator.actuatorData.loadingTime)
+                switch (_observedObject.tag)
                 {
-                    case Actuator.loadingTimeOptions.verySlow:
-                        loadingTime = 1.25f;
+                    case "Grabbable":
+                        switch (_grabbedActuator.actuatorData.loadingTime)
+                        {
+                            case Actuator.loadingTimeOptions.verySlow:
+                                loadingTime = 1.25f;
+                                break;
+
+                            case Actuator.loadingTimeOptions.slow:
+                                loadingTime = 1f;
+                                break;
+
+                            case Actuator.loadingTimeOptions.medium:
+                                loadingTime = .50f;
+                                break;
+
+                            default:
+                                loadingTime = .25f;
+                                break;
+                        }
                         break;
 
-                    case Actuator.loadingTimeOptions.slow:
-                        loadingTime = 1f;
-                        break;
-
-                    case Actuator.loadingTimeOptions.medium:
-                        loadingTime = .50f;
-                        break;
-
-                    default:
-                        loadingTime = .25f;
+                    case "Patient":
+                        Patient patient = _observedObject.GetComponent<Patient>();
+                        patient.ReceiveActuator(_grabbedActuator.actuatorData);
+                        
                         break;
                 }
 
                 ActivateProgressBar(loadingTime); //Activamos barra de progreso para acción
             }
-            else if (_grabbedObject != null)
+            else if (_isGrabbingSomething)
             {
                 DropObject(); //Lanzar objeto
             }
         }
     }
 
-    GameObject ObjDetection()
+    void ObjDetection()
     {
         RaycastHit hit;
 
         if (Physics.Raycast(grabPoint.position, grabPoint.TransformDirection(Vector3.forward), out hit, 1f))
         {
-            if (hit.transform.tag.Equals("Grabbable"))
+            if (hit.transform.tag.Equals("Grabbable") || hit.transform.tag.Equals("Patient"))
             {
                 GameManager.Instance.FocusObject(hit.transform.gameObject);
-                _observedActuator = hit.transform.gameObject.GetComponent<ActuatorObject>();
+                _grabbedActuator = hit.transform.gameObject.GetComponent<ActuatorObject>();
 
-                return hit.transform.gameObject;
+                _observedObject = hit.transform.gameObject;
+                return;
             }
         }
 
         GameManager.Instance.UnfocusObjects();
-        return null;
+        _observedObject =  null;
     }
 
     public void GrabObject()
     {
-        _grabbedObject = ObjDetection();
-
-        if (_grabbedObject == null)
+        if (_observedObject == null)
         {
             return;
         }
 
         _isGrabbingSomething = true;
 
-        _grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-        _grabbedObject.transform.parent = grabPoint;
-        _grabbedObject.transform.localPosition = Vector3.zero;
-        _grabbedObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        _grabbedActuator.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        _grabbedActuator.gameObject.transform.parent = grabPoint;
+        _grabbedActuator.gameObject.transform.localPosition = Vector3.zero;
+        _grabbedActuator.gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     void DropObject()
     {
-        _grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-        _grabbedObject.GetComponent<ActuatorObject>().DelayedReset(.5f);
-
         _isGrabbingSomething = false;
-        _grabbedObject.transform.parent = null;
-        _grabbedObject = null;
+
+        _grabbedActuator.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        _grabbedActuator.gameObject.GetComponent<ActuatorObject>().DelayedReset(.5f);
+        _grabbedActuator.gameObject.transform.parent = null;
+        _grabbedActuator = null;
     }
 
     public void ActivateProgressBar(float time)
@@ -113,8 +127,6 @@ public class Grab : MonoBehaviour
 
         _progressBarAction.grabObject = true;
         _progressBarAction.loadingTime = time;
-        /* _progressBarAction.onObjectReadyToGrab.RemoveAllListeners();
-        _progressBarAction.onObjectReadyToGrab.AddListener(GrabObject); */
 
         progressBar.SetActive(true);
     }
