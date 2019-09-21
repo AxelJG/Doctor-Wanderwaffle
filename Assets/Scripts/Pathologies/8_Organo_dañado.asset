@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "8_Organo_da\xF1ado"
   m_EditorClassIdentifier: 
   id: 8
+  namePathology: "Organo da\xF1ado"
   timeOfLife: 30
   difficulty: 4
   actuators:

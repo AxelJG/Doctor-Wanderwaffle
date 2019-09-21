@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3_Fiebre_leve
   m_EditorClassIdentifier: 
   id: 3
+  namePathology: Fiebre leve
   timeOfLife: 15
   difficulty: 0
   actuators:

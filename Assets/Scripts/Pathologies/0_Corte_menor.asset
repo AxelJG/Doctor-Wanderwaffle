@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 0_Corte_menor
   m_EditorClassIdentifier: 
   id: 0
+  namePathology: Corte menor
   timeOfLife: 10
   difficulty: 0
   actuators:

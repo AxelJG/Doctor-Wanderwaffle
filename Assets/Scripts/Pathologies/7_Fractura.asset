@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 7_Fractura
   m_EditorClassIdentifier: 
   id: 7
+  namePathology: Fractura
   timeOfLife: 20
   difficulty: 1
   actuators:

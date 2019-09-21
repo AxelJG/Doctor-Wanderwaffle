@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 6_Tumor
   m_EditorClassIdentifier: 
   id: 6
+  namePathology: Tumor
   timeOfLife: 30
   difficulty: 4
   actuators:

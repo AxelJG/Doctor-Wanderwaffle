@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2_Hemorragia
   m_EditorClassIdentifier: 
   id: 2
+  namePathology: Hemorragia
   timeOfLife: 20
   difficulty: 3
   actuators:

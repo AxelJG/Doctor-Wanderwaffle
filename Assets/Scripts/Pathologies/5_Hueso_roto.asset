@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 5_Hueso_roto
   m_EditorClassIdentifier: 
   id: 5
+  namePathology: Hueso roto
   timeOfLife: 20
   difficulty: 3
   actuators:

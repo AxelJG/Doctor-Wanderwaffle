@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4_Fiebre_severa
   m_EditorClassIdentifier: 
   id: 4
+  namePathology: Fiebre severa
   timeOfLife: 30
   difficulty: 2
   actuators:

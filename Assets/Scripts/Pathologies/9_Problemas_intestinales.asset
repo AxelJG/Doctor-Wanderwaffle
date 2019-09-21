@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 9_Problemas_intestinales
   m_EditorClassIdentifier: 
   id: 9
+  namePathology: Problemas intestinales
   timeOfLife: 20
   difficulty: 2
   actuators:

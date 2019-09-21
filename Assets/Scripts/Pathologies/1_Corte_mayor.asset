@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Corte_mayor
   m_EditorClassIdentifier: 
   id: 1
+  namePathology: Corte mayor
   timeOfLife: 10
   difficulty: 1
   actuators:
