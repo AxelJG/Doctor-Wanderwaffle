@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         stepsAudioSource.Stop();
 
         _animator = GetComponent<Animator>();
+            _animator.speed = 2f;
     }
 
     // Update is called once per frame
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
             _didOnce = true;
 
             _animator.SetBool("isWalking", _moving);
-            _animator.speed = 2f;
 
             stepsAudioSource.Play();
         }
@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
             _didOnce = false;
 
             _animator.SetBool("isWalking", false);
-            _animator.speed = 1f;
 
             stepsAudioSource.Stop();
         }

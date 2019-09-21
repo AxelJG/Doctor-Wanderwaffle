@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Interactor : MonoBehaviour
 {
     public Transform grabPoint;
@@ -15,9 +16,12 @@ public class Interactor : MonoBehaviour
 
     public GameObject workingParticleEffect;
 
+    Animator _animator;
+
     void Awake()
     {
         _progressBarAction = progressBar.GetComponent<ProgressBarAction>();
+        _animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -132,6 +136,8 @@ public class Interactor : MonoBehaviour
         Debug.LogFormat("Grabbed object: {0}", _grabbedActuator);
         _grabbedActuator.Grab(grabPoint);
 
+        _animator.SetBool("isGrabbing", true);
+
     }
 
     void DropObject()
@@ -141,6 +147,8 @@ public class Interactor : MonoBehaviour
 
         _grabbedActuator.Drop();
         _grabbedActuator = null;
+
+        _animator.SetBool("isGrabbing", false);
     }
 
     void ResetObject()
