@@ -6,6 +6,20 @@ public class Patient : MonoBehaviour
 {
     public Pathology pathology;
     int _pathologyStep = 0;
+    float lifetime = 0;
+    bool _isCured;
+
+    void Awake()
+    {
+        lifetime = pathology.timeOfLife;
+    }
+
+    void Start()
+    {
+        GameManager.Instance.RegisterPatient();
+
+        Invoke("CheckIfDead", lifetime);
+    }
 
     public void ReceiveActuator(Actuator actuator)
     {
@@ -17,6 +31,10 @@ public class Patient : MonoBehaviour
             {
                 Debug.LogFormat(this, "Patient {0} is cured! Good job!", name);
                 _pathologyStep = 0;
+
+                GameManager.Instance.PatientCured();
+                Leave();
+                
                 return;
             }
 
@@ -25,6 +43,19 @@ public class Patient : MonoBehaviour
         else
         {
             Debug.Log("Dude, how are you even a doctor?");
+        }
+    }
+
+    void Leave()
+    {
+
+    }
+
+    void CheckIfDead()
+    {
+        if (!_isCured)
+        {
+            
         }
     }
 }
