@@ -11,7 +11,16 @@ public class Patient : MonoBehaviour
     {
         if (actuator.id == pathology.actuators[_pathologyStep].id)
         {
-            Debug.Log("Nice job! That was the correct actuator");
+            _pathologyStep++;
+
+            if (_pathologyStep >= pathology.actuators.Count)
+            {
+                Debug.LogFormat(this, "Patient {0} is cured! Good job!", name);
+                _pathologyStep = 0;
+                return;
+            }
+
+            Debug.Log("Seems that will do...");
         }
         else
         {

@@ -16,4 +16,5 @@ MonoBehaviour:
   name: Agua oxigenada
   utility: Buen desinfectante, mala bebida
   sprite: {fileID: 0}
-  loadingTime: 0
+  grabbingTime: 0
+  performanceTime: 0

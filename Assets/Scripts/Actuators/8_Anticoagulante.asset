@@ -16,4 +16,5 @@ MonoBehaviour:
   name: Anticoagulante
   utility: Pues para que la sangre no coagule, obviamente
   sprite: {fileID: 0}
-  loadingTime: 0
+  grabbingTime: 0
+  performanceTime: 1

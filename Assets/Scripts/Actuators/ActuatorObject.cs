@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ActuatorObject : MonoBehaviour
 {
     Vector3 _initalPos;
     Quaternion _initalRotation;
+    Rigidbody _rigidbody;
 
     [HideInInspector]
     public Material material;
@@ -17,6 +19,7 @@ public class ActuatorObject : MonoBehaviour
         _initalPos = this.transform.position;
         _initalRotation = this.transform.rotation;
         material = GetComponent<Renderer>().material;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -24,27 +27,35 @@ public class ActuatorObject : MonoBehaviour
         GameManager.Instance.medicalObjs.Add(this.gameObject);
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void Drop()
     {
-        /* if (collision.transform.tag.Equals("Floor"))
-        {
-            this.transform.position = _initalPos;
-            this.transform.rotation = _initalRotation;
-        } */
+        transform.parent = null;
+        _rigidbody.isKinematic = false;
+        StartCoroutine(ResetActuator(.5f));
     }
 
-    public void DelayedReset(float time)
+    public void Grab(Transform t)
     {
-        StartCoroutine(ResetActuator(time));
+        _rigidbody.isKinematic = true;
+
+        transform.parent = t;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     IEnumerator ResetActuator(float time)
     {
         yield return new WaitForSeconds(time);
 
-        this.transform.position = _initalPos;
-        this.transform.rotation = _initalRotation;
+        ForceReset();
 
         yield break;
+    }
+
+    public void ForceReset()
+    {
+        this.transform.parent = null;
+        this.transform.position = _initalPos;
+        this.transform.rotation = _initalRotation;
     }
 }
