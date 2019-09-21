@@ -15,6 +15,7 @@ public class NoteContent : MonoBehaviour
     {
         LoadPathologyNote();
     }
+
     private void LoadPathologyNote() {
         pathologyNameText.text = pathology.namePathology;
         string difficultyResult = pathology.difficulty.ToString();

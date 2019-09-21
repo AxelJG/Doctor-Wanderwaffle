@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject menuWinLevel;
     public GameObject menuLose;
     public GameObject menuWinGame;
+    public GameObject menuNotes;
 
     [Header("Timer")]
     public List<Text> timerLevelTexts;
@@ -34,6 +35,10 @@ public class GameManager : Singleton<GameManager>
     #region BASE
     private void Update() {
         CountDown();
+
+        if (Input.GetButtonDown("Notes")) {
+            menuNotes.SetActive(!menuNotes.activeSelf);
+        }
     }
     #endregion
 
@@ -89,6 +94,7 @@ public class GameManager : Singleton<GameManager>
         if(levelsCompleted < MAXIMUM_LEVELS) {
             print("Level Complete!");
             MenuVisibility(menuWinLevel, true);
+            menuNotes.SetActive(false);
             Pause();
         } else {
             WinGame();
@@ -98,6 +104,7 @@ public class GameManager : Singleton<GameManager>
     //Has perdido
     private void Lose() {
         print("You Lose!");
+        menuNotes.SetActive(false);
         MenuVisibility(menuLose, true);
         Pause();
     }
@@ -106,6 +113,7 @@ public class GameManager : Singleton<GameManager>
     private void WinGame() {
         print("YOU WIN THE GAME! Thanks for playing");
         MenuVisibility(menuWinGame, true);
+        menuNotes.SetActive(false);
         Pause();
     }
     #endregion
