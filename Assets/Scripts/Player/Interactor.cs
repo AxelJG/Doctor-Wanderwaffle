@@ -136,6 +136,7 @@ public class Interactor : MonoBehaviour
 
     void DropObject()
     {
+        Debug.LogFormat("Dropped object: {0}", _grabbedActuator);
         _isGrabbingSomething = false;
 
         _grabbedActuator.Drop();

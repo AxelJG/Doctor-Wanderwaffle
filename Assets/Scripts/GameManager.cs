@@ -26,8 +26,8 @@ public class GameManager : Singleton<GameManager>
     public bool playerActionInprogress = false;  
 
     //WIN/LOSE & LEVELS CONTROL
-    [HideInInspector]
-    public int pathologiesToCure = 1;
+    int _patientsInLevel = 0;
+    int prestige = 100;
     private const int MAXIMUM_LEVELS = 5;
     private int levelsCompleted = 0;
     #endregion
@@ -76,12 +76,40 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region Patholigies in Level
-    //Enfermedades a curar (Va restando)
-    public void PathologiesDiscount() {
-        pathologiesToCure = pathologiesToCure - 1;
 
-        if (pathologiesToCure <= 0) {
+    public void RegisterPatient()
+    {
+        _patientsInLevel++;
+    }
+    
+    //Enfermedades a curar (Va restando)
+    public void PatientCured()
+    {
+        _patientsInLevel = _patientsInLevel - 1;
+
+        if (_patientsInLevel <= 0)
+        {
             WinLevel();
+        }
+    }
+
+    public void PatientDied()
+    {
+        prestige -= 25;
+
+        if (prestige <= 0)
+        {
+            Lose();
+        }
+    }
+
+    public void WrongAction()
+    {
+        prestige -= 10;
+
+        if (prestige <= 0)
+        {
+            Lose();
         }
     }
     #endregion

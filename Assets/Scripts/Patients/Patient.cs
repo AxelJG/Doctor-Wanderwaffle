@@ -29,6 +29,7 @@ public class Patient : MonoBehaviour
 
             if (_pathologyStep >= pathology.actuators.Count)
             {
+                _isCured = true;
                 Debug.LogFormat(this, "Patient {0} is cured! Good job!", name);
                 _pathologyStep = 0;
 
@@ -43,6 +44,8 @@ public class Patient : MonoBehaviour
         else
         {
             Debug.Log("Dude, how are you even a doctor?");
+
+            GameManager.Instance.WrongAction();
         }
     }
 
@@ -55,7 +58,7 @@ public class Patient : MonoBehaviour
     {
         if (!_isCured)
         {
-            
+            Debug.LogFormat("Patient {0} died you fool!", name);
         }
     }
 }
