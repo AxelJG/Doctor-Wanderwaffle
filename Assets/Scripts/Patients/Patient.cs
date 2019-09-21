@@ -9,6 +9,8 @@ public class Patient : MonoBehaviour
     float lifetime = 0;
     bool _isCured;
 
+    public AudioSource fartAudioSource, OKAudioSource, OhNoAudioSource, WowAudioSource;
+
     void Awake()
     {
         lifetime = pathology.timeOfLife;
@@ -32,19 +34,21 @@ public class Patient : MonoBehaviour
                 _isCured = true;
                 Debug.LogFormat(this, "Patient {0} is cured! Good job!", name);
                 _pathologyStep = 0;
-
+                
+                WowAudioSource.Play();
                 GameManager.Instance.PatientCured();
                 Leave();
                 
                 return;
             }
 
+            OKAudioSource.Play();
             Debug.Log("Seems that will do...");
         }
         else
         {
             Debug.Log("Dude, how are you even a doctor?");
-
+            fartAudioSource.Play();
             GameManager.Instance.WrongAction();
         }
     }
@@ -59,6 +63,7 @@ public class Patient : MonoBehaviour
         if (!_isCured)
         {
             Debug.LogFormat("Patient {0} died you fool!", name);
+            OhNoAudioSource.Play();
         }
     }
 }

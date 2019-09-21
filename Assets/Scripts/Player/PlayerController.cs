@@ -14,9 +14,13 @@ public class PlayerController : MonoBehaviour
     ObjectPool _dustParticlePool;
     public Transform dustEmitter;
 
+    public AudioSource stepsAudioSource;
+
     void Awake()
     {
         _dustParticlePool = GameObject.FindGameObjectWithTag("DustParticlePool").GetComponent<ObjectPool>();
+
+        stepsAudioSource.Stop();
     }
 
     // Update is called once per frame
@@ -37,11 +41,15 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(SpawnParticleTrail());
             _didOnce = true;
+
+            stepsAudioSource.Play();
         }
 
         if (!_moving)
         {
             _didOnce = false;
+
+            stepsAudioSource.Stop();
         }
     }
 
