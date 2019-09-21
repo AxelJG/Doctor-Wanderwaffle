@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
         stepsAudioSource.Stop();
 
         _animator = GetComponent<Animator>();
-            _animator.speed = 2f;
     }
 
     // Update is called once per frame
@@ -43,20 +42,21 @@ public class PlayerController : MonoBehaviour
         ApplyInput(moveAxis, turnAxis);
         _moving = moveAxis != 0;
 
-        if (_moving && !_didOnce)
+        if (_moving)
         {
-            StartCoroutine(SpawnParticleTrail());
-            _didOnce = true;
+            if (!_didOnce)
+            {
+                _animator.SetBool("isWalking", true);
+                StartCoroutine(SpawnParticleTrail());
+                _didOnce = true;
 
-            _animator.SetBool("isWalking", _moving);
 
-            stepsAudioSource.Play();
+                stepsAudioSource.Play();
+            }
         }
-
-        if (!_moving)
+        else
         {
             _didOnce = false;
-
             _animator.SetBool("isWalking", false);
 
             stepsAudioSource.Stop();
