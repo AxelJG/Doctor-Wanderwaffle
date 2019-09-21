@@ -13,6 +13,8 @@ public class Interactor : MonoBehaviour
     public GameObject progressBar;
     ProgressBarAction _progressBarAction;
 
+    public GameObject workingParticleEffect;
+
     void Awake()
     {
         _progressBarAction = progressBar.GetComponent<ProgressBarAction>();
@@ -85,6 +87,7 @@ public class Interactor : MonoBehaviour
                                 break;
                         }
 
+                        workingParticleEffect.SetActive(true);
                         ActivateProgressBar(loadingTime, false, true); //Activamos barra de progreso para acción
                         break;
                 }
@@ -167,6 +170,8 @@ public class Interactor : MonoBehaviour
     {
         Debug.LogFormat(this, "Action performed on patient {0}", _targetPatient);
         _targetPatient.ReceiveActuator(_grabbedActuator.actuatorData);
+
+        workingParticleEffect.SetActive(false);
 
         ResetObject();
     }
