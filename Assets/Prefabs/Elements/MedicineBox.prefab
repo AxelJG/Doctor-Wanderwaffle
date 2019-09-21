@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: d46f75e770051e54ba21b0cf639751dc, type: 2}
-  actuatorData: {fileID: 11400000, guid: 50c61248d6d530843918c49da8ea0bb1, type: 2}
+  actuatorData: {fileID: 11400000, guid: ac530cbf64489104aa5b6c98b08cc8eb, type: 2}
