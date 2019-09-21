@@ -16,4 +16,5 @@ MonoBehaviour:
   name: Hilo y aguja
   utility: Por si quisieras ponerte a coser
   sprite: {fileID: 0}
-  loadingTime: 1
+  grabbingTime: 0
+  performanceTime: 1

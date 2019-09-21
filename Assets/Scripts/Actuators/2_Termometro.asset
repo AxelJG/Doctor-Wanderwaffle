@@ -16,4 +16,5 @@ MonoBehaviour:
   name: "Term\xF3metro"
   utility: Si eres adulto, se pone en la boca
   sprite: {fileID: 0}
-  loadingTime: 0
+  grabbingTime: 0
+  performanceTime: 1

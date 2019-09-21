@@ -16,4 +16,5 @@ MonoBehaviour:
   name: Rayos X
   utility: No mirar fijamente
   sprite: {fileID: 0}
-  loadingTime: 2
+  grabbingTime: 0
+  performanceTime: 3

@@ -60,11 +60,13 @@ public class ProgressBarAction : MonoBehaviour
 
         if (grabObject && onObjectReadyToGrab != null)
         {
+            Debug.LogFormat("Object ready to grab!");
             onObjectReadyToGrab.Invoke();
         }
 
         if (performAction && onActionPerformed != null)
         {
+            Debug.LogFormat("Performing action on patient...");
             onActionPerformed.Invoke();
         }
 

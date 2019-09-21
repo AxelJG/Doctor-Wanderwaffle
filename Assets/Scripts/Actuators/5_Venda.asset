@@ -16,4 +16,5 @@ MonoBehaviour:
   name: Venda
   utility: Va bien para apretar cosas
   sprite: {fileID: 0}
-  loadingTime: 1
+  grabbingTime: 0
+  performanceTime: 1
