@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     bool _moving = false, _didOnce = false;
@@ -16,11 +17,15 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource stepsAudioSource;
 
+    Animator _animator;
+
     void Awake()
     {
         _dustParticlePool = GameObject.FindGameObjectWithTag("DustParticlePool").GetComponent<ObjectPool>();
 
         stepsAudioSource.Stop();
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,12 +47,18 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(SpawnParticleTrail());
             _didOnce = true;
 
+            _animator.SetBool("isWalking", _moving);
+            _animator.speed = 2f;
+
             stepsAudioSource.Play();
         }
 
         if (!_moving)
         {
             _didOnce = false;
+
+            _animator.SetBool("isWalking", false);
+            _animator.speed = 1f;
 
             stepsAudioSource.Stop();
         }
