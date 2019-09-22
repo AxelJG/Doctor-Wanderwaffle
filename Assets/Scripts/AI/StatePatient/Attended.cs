@@ -20,10 +20,26 @@ public class Attended : State
         //Adapt position & rotation
         this.transform.rotation = Quaternion.Euler(-104f, 90f, 185f);
         this.transform.position = GameManager.Instance.bedsAttendedPoints[stateMachine.idBedRef].position;
+
+        StartCoroutine(ActivateCollider());
+    }
+
+    IEnumerator ActivateCollider()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        this.GetComponent<BoxCollider>().enabled = true;
+
+        yield break;
     }
 
     public override void CheckExit() {
         //TODO con el script de paciente
+
+        if (GetComponent<Patient>().isCured)
+        {
+            stateMachine.ChangeState(cured);
+        }
 
         //if(paciente_curado)
         //stateMachine.ChangeState(cured);

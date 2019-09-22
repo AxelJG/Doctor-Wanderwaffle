@@ -36,7 +36,7 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector]
     public List<GameObject> medicalObjs;
     [HideInInspector]
-    public bool playerActionInprogress = false;  
+    public bool playerActionInprogress = false;
 
     //WIN/LOSE & LEVELS CONTROL
     int _patientsInLevel = 0;
@@ -50,30 +50,39 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region BASE
-    private void Awake() {
+    private void Awake()
+    {
         freeBeds = new List<bool>() { false, false, false };
     }
 
-    private void Update() {
+    private void Update()
+    {
         CountDown();
 
-        if (Input.GetButtonDown("Notes")) {
+        if (Input.GetButtonDown("Notes"))
+        {
             menuNotes.SetActive(!menuNotes.activeSelf);
         }
     }
     #endregion
 
     #region Level CountDown
-    private void CountDown() {
-        if(timeLevel > 0f) {
+    private void CountDown()
+    {
+        if (timeLevel > 0f)
+        {
             timeLevel -= Time.deltaTime;
-            timerLevelTexts[0].text = Mathf.Floor((timeLevel * 100) / 100.0f).ToString("00"); ;
-            timerLevelTexts[1].text = Mathf.Round((float)((timeLevel - Math.Truncate(timeLevel)) * 100)).ToString("00");
-        } else {
-            if (countTimer) {
+            float minutes = (float)Math.Truncate(timeLevel / 60f);
+            timerLevelTexts[0].text = minutes.ToString("00");
+            timerLevelTexts[1].text = (timeLevel - (minutes * 60f)).ToString("00");
+        }
+        else
+        {
+            if (countTimer)
+            {
                 countTimer = false;
                 timerLevelTexts[0].text = "00";
-                timerLevelTexts[1].text = "00";
+                timerLevelTexts[1].text = "00"; 
                 Lose();
             }
         }
@@ -107,7 +116,7 @@ public class GameManager : Singleton<GameManager>
     {
         _patientsInLevel++;
     }
-    
+
     //Enfermedades a curar (Va restando)
     public void PatientCured()
     {
@@ -142,21 +151,26 @@ public class GameManager : Singleton<GameManager>
 
     #region Game State
     //Nivel superado
-    private void WinLevel() {
+    private void WinLevel()
+    {
         levelsCompleted = levelsCompleted + 1;
-     
-        if(levelsCompleted < MAXIMUM_LEVELS) {
+
+        if (levelsCompleted < MAXIMUM_LEVELS)
+        {
             print("Level Complete!");
             MenuVisibility(menuWinLevel, true);
             menuNotes.SetActive(false);
             Pause();
-        } else {
+        }
+        else
+        {
             WinGame();
         }
     }
 
     //Has perdido
-    private void Lose() {
+    private void Lose()
+    {
         print("You Lose!");
         menuNotes.SetActive(false);
         MenuVisibility(menuLose, true);
@@ -164,7 +178,8 @@ public class GameManager : Singleton<GameManager>
     }
 
     //Te has pasado el juego
-    private void WinGame() {
+    private void WinGame()
+    {
         print("YOU WIN THE GAME! Thanks for playing");
         MenuVisibility(menuWinGame, true);
         menuNotes.SetActive(false);
@@ -174,19 +189,22 @@ public class GameManager : Singleton<GameManager>
 
     #region Menus
     //Visibilidad de los menus del nivel
-    private void MenuVisibility(GameObject menu, bool v) {
+    private void MenuVisibility(GameObject menu, bool v)
+    {
         menu.SetActive(v);
     }
     #endregion
 
     #region Resume/Pause
     //Pausa
-    private void Pause() {
+    private void Pause()
+    {
         Time.timeScale = 0f;
     }
 
     //Reanudar
-    private void Resume() {
+    private void Resume()
+    {
         Time.timeScale = 1f;
     }
     #endregion
