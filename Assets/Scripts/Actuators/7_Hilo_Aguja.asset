@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 7
   name: Hilo y aguja
   utility: Por si quisieras ponerte a coser
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 00005f170d736fd41bda806b73537396, type: 3}
   grabbingTime: 0
   performanceTime: 1

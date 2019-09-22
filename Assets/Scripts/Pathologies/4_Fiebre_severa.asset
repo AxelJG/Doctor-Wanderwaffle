@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 4_Fiebre_severa
   m_EditorClassIdentifier: 
   id: 4
-  namePathology: Fiebre severa
+  namePathology: Mareo
   timeOfLife: 30
   difficulty: 2
   actuators:
   - {fileID: 11400000, guid: b08991249cc2b5d409c61617109301e0, type: 2}
   - {fileID: 11400000, guid: e2a348cd0da296241a2ffe2f37309ea9, type: 2}
   - {fileID: 11400000, guid: e713592e9e6648d4695a0098b9b70301, type: 2}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 15db6f12c231ffe438141e0b516222fa, type: 3}
