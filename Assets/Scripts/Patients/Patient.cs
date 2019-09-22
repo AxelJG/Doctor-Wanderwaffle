@@ -7,20 +7,24 @@ public class Patient : MonoBehaviour
     public Pathology pathology;
     int _pathologyStep = 0;
     float lifetime = 0;
-    bool _isCured;
+    [HideInInspector]
+    public bool isCured;
 
     public AudioSource fartAudioSource, OKAudioSource, OhNoAudioSource, WowAudioSource;
+    public SceneDisplay display;
+    public ParticleSystem goodJobPS, badJobPS;
+
 
     void Awake()
     {
         lifetime = pathology.timeOfLife;
+
+        display.sprite = pathology.sprite;
     }
 
     void Start()
     {
         GameManager.Instance.RegisterPatient();
-
-        Invoke("CheckIfDead", lifetime);
     }
 
     public void ReceiveActuator(Actuator actuator)
@@ -31,10 +35,11 @@ public class Patient : MonoBehaviour
 
             if (_pathologyStep >= pathology.actuators.Count)
             {
-                _isCured = true;
+                isCured = true;
                 Debug.LogFormat(this, "Patient {0} is cured! Good job!", name);
                 _pathologyStep = 0;
                 
+                goodJobPS.Play();
                 WowAudioSource.Play();
                 GameManager.Instance.PatientCured();
                 Leave();
@@ -42,12 +47,14 @@ public class Patient : MonoBehaviour
                 return;
             }
 
+            goodJobPS.Play();
             OKAudioSource.Play();
             Debug.Log("Seems that will do...");
         }
         else
         {
             Debug.Log("Dude, how are you even a doctor?");
+            badJobPS.Play();
             fartAudioSource.Play();
             GameManager.Instance.WrongAction();
         }
@@ -60,7 +67,7 @@ public class Patient : MonoBehaviour
 
     void CheckIfDead()
     {
-        if (!_isCured)
+        if (!isCured)
         {
             Debug.LogFormat("Patient {0} died you fool!", name);
             OhNoAudioSource.Play();

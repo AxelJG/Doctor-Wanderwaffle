@@ -13,6 +13,7 @@ public class ActuatorObject : MonoBehaviour
     public Material material;
 
     public Actuator actuatorData;
+    public SceneDisplay HUD;
 
     void Awake()
     {
@@ -20,6 +21,8 @@ public class ActuatorObject : MonoBehaviour
         _initalRotation = this.transform.rotation;
         material = GetComponent<Renderer>().material;
         _rigidbody = GetComponent<Rigidbody>();
+
+        HUD.sprite = actuatorData.sprite;
     }
 
     void Start()

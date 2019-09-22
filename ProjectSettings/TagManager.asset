@@ -9,6 +9,8 @@ TagManager:
   - DustParticleEffect
   - DustParticlePool
   - Patient
+  - GoodJobParticleEffect
+  - BadJobParticleEffect
   layers:
   - Default
   - TransparentFX

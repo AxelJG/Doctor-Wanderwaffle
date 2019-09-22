@@ -57,7 +57,17 @@ ModelImporter:
     4300014: Sphere006
     4300016: Sphere007
     4300018: Box007
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #64'
+    second: {fileID: 2100000, guid: 5c5f75e366166104d9e379c6e08f5cf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: eb61d83a950a8a946a73c7db2fe194ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

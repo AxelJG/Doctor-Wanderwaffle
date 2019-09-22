@@ -109,16 +109,18 @@ public class Interactor : MonoBehaviour
 
         if (Physics.Raycast(grabPoint.position, grabPoint.TransformDirection(Vector3.forward), out hit, 1f))
         {
+            print(hit.transform.name);
             if (hit.transform.tag.Equals("Grabbable") || hit.transform.tag.Equals("Patient"))
             {
-                GameManager.Instance.FocusObject(hit.transform.gameObject);
                 _observedObject = hit.transform.gameObject;
+
+                GameManager.Instance.ActivateHUD(_observedObject);
             }
 
             return;
         }
 
-        GameManager.Instance.UnfocusObjects();
+        GameManager.Instance.DeactivateHUD(_observedObject);
         _observedObject = null;
     }
 
@@ -132,6 +134,7 @@ public class Interactor : MonoBehaviour
 
         _isGrabbingSomething = true;
 
+        GameManager.Instance.DeactivateHUD(_observedObject);
         _grabbedActuator = _observedObject.GetComponent<ActuatorObject>();
         Debug.LogFormat("Grabbed object: {0}", _grabbedActuator);
         _grabbedActuator.Grab(grabPoint);
