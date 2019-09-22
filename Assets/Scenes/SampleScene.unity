@@ -838,7 +838,7 @@ MonoBehaviour:
   menuWinLevel: {fileID: 199543800}
   menuLose: {fileID: 252898034}
   menuWinGame: {fileID: 459768033}
-  menuNotes: {fileID: 0}
+  menuNotes: {fileID: 962294082}
   timerLevelTexts:
   - {fileID: 1312148353}
   - {fileID: 1238094630}
@@ -1162,6 +1162,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 30c0413d797f3574895f15c338ab818f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdcc120c1581a7f4abdf4fff38716c4d, type: 3}
+--- !u!1 &962294082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1405251376, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+    type: 3}
+  m_PrefabInstance: {fileID: 3230258637338219649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1090806786
 PrefabInstance:
   m_ObjectHideFlags: 0
