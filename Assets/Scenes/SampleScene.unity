@@ -1323,7 +1323,7 @@ MonoBehaviour:
   timerLevelTexts:
   - {fileID: 1312148353}
   - {fileID: 1238094630}
-  timeLevel: 60
+  timeLevel: 90
   bedsPoints:
   - {fileID: 6869917495707865770}
   - {fileID: 6869917495970000939}
