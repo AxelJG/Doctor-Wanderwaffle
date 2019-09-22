@@ -26,7 +26,7 @@ public class ProgressBarAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Camera.main.transform);
+        transform.rotation = Quaternion.Euler(Vector3.zero);
         Progression();
     }
 

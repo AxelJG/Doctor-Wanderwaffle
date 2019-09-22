@@ -30,6 +30,10 @@ public class GameManager : Singleton<GameManager>
     int prestige = 100;
     private const int MAXIMUM_LEVELS = 5;
     private int levelsCompleted = 0;
+
+    public delegate void HUDToggleDelegate(GameObject o);
+    public static event HUDToggleDelegate OnActivateHUD, OnDeactivateHUD;
+
     #endregion
 
     #region BASE
@@ -61,18 +65,23 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region Focus in Actuators
-    //Resaltar objeto interactuable cuando estamos delante
-    public void FocusObject(GameObject obj) {
-        obj.GetComponent<Renderer>().material = focusedMaterial;
-    }
 
-    //Quitamos efecto resaltado cuando nos alejamos
-    public void UnfocusObjects() {
-        foreach (GameObject mObj in medicalObjs) {
-            Material m = mObj.GetComponent<ActuatorObject>().material;
-            mObj.GetComponent<Renderer>().material = m;
+    public void ActivateHUD(GameObject o)
+    {
+        if (OnActivateHUD != null)
+        {
+            OnActivateHUD.Invoke(o);
         }
     }
+
+    public void DeactivateHUD(GameObject o)
+    {
+        if (OnDeactivateHUD != null)
+        {
+            OnDeactivateHUD.Invoke(o);
+        }
+    }
+
     #endregion
 
     #region Patholigies in Level

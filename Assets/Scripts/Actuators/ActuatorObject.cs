@@ -13,6 +13,7 @@ public class ActuatorObject : MonoBehaviour
     public Material material;
 
     public Actuator actuatorData;
+    public GameObject HUD;
 
     void Awake()
     {
