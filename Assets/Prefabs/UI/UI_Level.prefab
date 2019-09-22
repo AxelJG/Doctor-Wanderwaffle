@@ -474,14 +474,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 444146667}
-  - {fileID: 1751402832}
-  - {fileID: 1311086864}
-  - {fileID: 590815112}
   - {fileID: 1608207178}
+  - {fileID: 1311086864}
+  - {fileID: 1418947243}
   - {fileID: 1522419193}
+  - {fileID: 1751402832}
+  - {fileID: 590815112}
   - {fileID: 1623902678}
   - {fileID: 430270321}
-  - {fileID: 1418947243}
   - {fileID: 1096535787}
   - {fileID: 1096197755}
   m_Father: {fileID: 1130239223}
@@ -489,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000091552734}
+  m_AnchoredPosition: {x: 0, y: 0.000006482835}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &62417909
@@ -510,7 +510,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 15
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2534,7 +2534,7 @@ GameObject:
   - component: {fileID: 430270323}
   - component: {fileID: 430270322}
   m_Layer: 5
-  m_Name: NoteContent (7)
+  m_Name: Tumor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2549,14 +2549,14 @@ RectTransform:
   m_GameObject: {fileID: 430270320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1563535685}
   - {fileID: 511835271}
   - {fileID: 1876101205}
   - {fileID: 598408397}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2580,7 +2580,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -2689,7 +2689,7 @@ GameObject:
   - component: {fileID: 444146668}
   - component: {fileID: 444146669}
   m_Layer: 5
-  m_Name: NoteContent
+  m_Name: Corte Menor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2704,7 +2704,7 @@ RectTransform:
   m_GameObject: {fileID: 444146666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1232000201}
   - {fileID: 1703615153}
@@ -2735,7 +2735,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -3256,7 +3256,7 @@ GameObject:
   - component: {fileID: 590815114}
   - component: {fileID: 590815113}
   m_Layer: 5
-  m_Name: NoteContent (3)
+  m_Name: Hemorragia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3271,14 +3271,14 @@ RectTransform:
   m_GameObject: {fileID: 590815111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1569179613}
   - {fileID: 1353269512}
   - {fileID: 743224582}
   - {fileID: 215675552}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3302,7 +3302,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -5046,8 +5046,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304977452}
   m_HandleRect: {fileID: 304977451}
   m_Direction: 2
-  m_Value: 0.99999976
-  m_Size: 0.5927753
+  m_Value: 1
+  m_Size: 0.5701695
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5156,7 +5156,7 @@ RectTransform:
   m_GameObject: {fileID: 913421110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2900001, y: 1.1125, z: 1}
+  m_LocalScale: {x: 1.2900001, y: 0.97761995, z: 1}
   m_Children:
   - {fileID: 1130239223}
   - {fileID: 727379612}
@@ -5166,7 +5166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: -69}
+  m_AnchoredPosition: {x: 21, y: -107}
   m_SizeDelta: {x: 1321.4, y: 689.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913421114
@@ -5933,7 +5933,7 @@ GameObject:
   - component: {fileID: 1096535789}
   - component: {fileID: 1096535788}
   m_Layer: 5
-  m_Name: NoteContent (9)
+  m_Name: Apendicitis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5948,7 +5948,7 @@ RectTransform:
   m_GameObject: {fileID: 1096535786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1939249348}
   - {fileID: 1540477202}
@@ -5979,7 +5979,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -7313,7 +7313,7 @@ GameObject:
   - component: {fileID: 1311086866}
   - component: {fileID: 1311086865}
   m_Layer: 5
-  m_Name: NoteContent (2)
+  m_Name: Corte Mayor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7328,7 +7328,7 @@ RectTransform:
   m_GameObject: {fileID: 1311086863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 262048524}
   - {fileID: 1501489836}
@@ -7359,7 +7359,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -8140,7 +8140,7 @@ GameObject:
   - component: {fileID: 1418947245}
   - component: {fileID: 1418947244}
   m_Layer: 5
-  m_Name: NoteContent (8)
+  m_Name: Fractura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8155,14 +8155,14 @@ RectTransform:
   m_GameObject: {fileID: 1418947242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 861120721}
   - {fileID: 92829555}
   - {fileID: 1192717749}
   - {fileID: 1220143632}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8186,7 +8186,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -8811,7 +8811,7 @@ GameObject:
   - component: {fileID: 1522419195}
   - component: {fileID: 1522419194}
   m_Layer: 5
-  m_Name: NoteContent (5)
+  m_Name: Mareo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8826,14 +8826,14 @@ RectTransform:
   m_GameObject: {fileID: 1522419192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1415385568}
   - {fileID: 1702383628}
   - {fileID: 2034694422}
   - {fileID: 1320210070}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8857,7 +8857,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -9604,7 +9604,7 @@ GameObject:
   - component: {fileID: 1608207180}
   - component: {fileID: 1608207179}
   m_Layer: 5
-  m_Name: NoteContent (4)
+  m_Name: Fiebre Leve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9619,14 +9619,14 @@ RectTransform:
   m_GameObject: {fileID: 1608207177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 1273287462}
   - {fileID: 982067534}
   - {fileID: 1132149122}
   - {fileID: 1006926634}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9650,7 +9650,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -9907,7 +9907,7 @@ GameObject:
   - component: {fileID: 1623902680}
   - component: {fileID: 1623902679}
   m_Layer: 5
-  m_Name: NoteContent (6)
+  m_Name: Hueso Roto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9922,14 +9922,14 @@ RectTransform:
   m_GameObject: {fileID: 1623902677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 797524391}
   - {fileID: 2128768030}
   - {fileID: 1642358381}
   - {fileID: 1049415389}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9953,7 +9953,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -10827,7 +10827,7 @@ GameObject:
   - component: {fileID: 1751402834}
   - component: {fileID: 1751402833}
   m_Layer: 5
-  m_Name: NoteContent (1)
+  m_Name: Problemas intestinales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10842,14 +10842,14 @@ RectTransform:
   m_GameObject: {fileID: 1751402831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1379677, z: 1}
   m_Children:
   - {fileID: 2122160267}
   - {fileID: 283967802}
   - {fileID: 585588513}
   - {fileID: 227890085}
   m_Father: {fileID: 62417907}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10873,7 +10873,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
