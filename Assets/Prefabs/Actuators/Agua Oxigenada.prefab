@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8175974827021283577}
   - component: {fileID: 8175974827021283578}
   - component: {fileID: 8175974827021283573}
+  - component: {fileID: 34165476932501927}
   m_Layer: 0
   m_Name: Agua Oxigenada
   m_TagString: Grabbable
@@ -45,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.8709569, z: 1}
+  m_Center: {x: 0, y: 0.3653342, z: 0}
 --- !u!54 &8175974827021283578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,6 +78,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: d46f75e770051e54ba21b0cf639751dc, type: 2}
   actuatorData: {fileID: 11400000, guid: b385256775ef21c4cba50485011a595e, type: 2}
+--- !u!23 &34165476932501927
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175974827021283579}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &2554726280456480606
 PrefabInstance:
   m_ObjectHideFlags: 0
