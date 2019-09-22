@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 0
   name: "Bistur\xED"
   utility: "\xDAtil para cortar"
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d363f6b3d108f5b4385cf7744138d7a2, type: 3}
   grabbingTime: 0
   performanceTime: 0

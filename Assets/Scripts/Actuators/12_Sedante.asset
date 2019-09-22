@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 12
   name: Sedante
   utility: Duerme al paciente, usar para no sentir dolor
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3bd71394feea30747854459eb7ca8b79, type: 3}
   grabbingTime: 0
   performanceTime: 1

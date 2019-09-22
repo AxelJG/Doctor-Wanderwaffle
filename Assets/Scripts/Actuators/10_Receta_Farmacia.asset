@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 10
   name: Receta de farmacia
   utility: "Si no sabes qu\xE9 dar al paciente, garabatea algo"
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 5f8c79f3059d4754d87daf48475795a9, type: 3}
   grabbingTime: 0
   performanceTime: 1
