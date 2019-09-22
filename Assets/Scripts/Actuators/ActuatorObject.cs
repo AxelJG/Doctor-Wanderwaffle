@@ -14,6 +14,7 @@ public class ActuatorObject : MonoBehaviour
 
     public Actuator actuatorData;
     public SceneDisplay HUD;
+    private GameManager gameManager;
 
     void Awake()
     {
@@ -23,11 +24,13 @@ public class ActuatorObject : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
 
         HUD.sprite = actuatorData.sprite;
+
+        gameManager = Camera.main.GetComponent<GameManager>();
     }
 
     void Start()
     {
-        GameManager.Instance.medicalObjs.Add(this.gameObject);
+        gameManager.medicalObjs.Add(this.gameObject);
     }
 
     public void Drop()

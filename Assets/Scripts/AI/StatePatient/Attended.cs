@@ -6,9 +6,11 @@ using UnityEngine.AI;
 public class Attended : State
 {
     public State cured, operating, xray, treatment;
+    public GameManager gameManager;
     Animator _animator;
 
     private void OnEnable() {
+        gameManager = Camera.main.GetComponent<GameManager>();
         _animator = GetComponent<Animator>();
         AttendedBedPosition();
     }
@@ -21,7 +23,7 @@ public class Attended : State
 
         //Adapt position & rotation
         this.transform.rotation = Quaternion.Euler(-104f, 90f, 185f);
-        this.transform.position = GameManager.Instance.bedsAttendedPoints[stateMachine.idBedRef].position;
+        this.transform.position = gameManager.bedsAttendedPoints[stateMachine.idBedRef].position;
         
 
         StartCoroutine(ActivateCollider());

@@ -9,12 +9,15 @@ public class Cured : State {
     private NavMeshAgent agent;
     Animator _animator;
 
+    public GameManager gameManager;
+
     private void OnEnable() {
+        gameManager = Camera.main.GetComponent<GameManager>();
         OutOfBed();
     }
 
     private void Start() {
-        exitPoint = GameManager.Instance.exitPoint;
+        exitPoint = gameManager.exitPoint;
         _animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -30,7 +33,7 @@ public class Cured : State {
     }
 
     private void OutOfBed() {
-        this.transform.position = GameManager.Instance.bedsPoints[stateMachine.idBedRef].position;
+        this.transform.position = gameManager.bedsPoints[stateMachine.idBedRef].position;
         this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
         //Enabled components

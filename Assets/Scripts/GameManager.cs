@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
     #region VARIABLES
     public Material focusedMaterial;
@@ -207,5 +208,17 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 1f;
     }
+    #endregion
+
+    #region Navigation Menu Click
+
+    public void RetryLevel() {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ReturnMenu() {
+        SceneManager.LoadScene("Menu");
+    }
+
     #endregion
 }

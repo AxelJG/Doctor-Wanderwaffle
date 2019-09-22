@@ -9,13 +9,15 @@ public class Xray : State
     public GameObject head, body;
     public State sick;
     private NavMeshAgent agent;
+    public GameManager gameManager;
 
     private void OnEnable() {
+        gameManager = Camera.main.GetComponent<GameManager>();
         OutOfBed();
     }
 
     private void Start() {
-        xRayPoint = GameManager.Instance.xRayPoint;
+        xRayPoint = gameManager.xRayPoint;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -26,7 +28,7 @@ public class Xray : State
     }
 
     private void OutOfBed() {
-        this.transform.position = GameManager.Instance.bedsPoints[stateMachine.idBedRef].position;
+        this.transform.position = gameManager.bedsPoints[stateMachine.idBedRef].position;
         this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
         //Enabled components

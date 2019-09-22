@@ -16,11 +16,14 @@ public class PlayerController : MonoBehaviour
     public Transform dustEmitter;
 
     public AudioSource stepsAudioSource;
+    public GameManager gameManager;
 
     Animator _animator;
 
     void Awake()
     {
+        gameManager = Camera.main.GetComponent<GameManager>();
+
         _dustParticlePool = GameObject.FindGameObjectWithTag("DustParticlePool").GetComponent<ObjectPool>();
 
         stepsAudioSource.Stop();
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.playerActionInprogress)
+        if (gameManager.playerActionInprogress)
         {
             return;
         }

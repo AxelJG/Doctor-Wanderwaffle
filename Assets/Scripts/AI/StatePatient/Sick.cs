@@ -10,6 +10,7 @@ public class Sick : State
     private NavMeshAgent agent;
     private Transform assignedBed;
     Animator _animator;
+    private GameManager gameManager;
 
     private void OnEnable() {
         Visible();
@@ -18,6 +19,8 @@ public class Sick : State
     // Start is called before the first frame updaate
     void Start()
     {
+        gameManager = Camera.main.GetComponent<GameManager>();
+
         agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         CheckFreeBed();
@@ -36,15 +39,15 @@ public class Sick : State
     private void CheckFreeBed() {
         int idList = 0;
 
-        for (int i = 0; i < GameManager.Instance.freeBeds.Count; i++) {
-            if(GameManager.Instance.freeBeds[i] == false) {
+        for (int i = 0; i < gameManager.freeBeds.Count; i++) {
+            if(gameManager.freeBeds[i] == false) {
                 idList = i;
                 break;
             }
         }
 
-        assignedBed = GameManager.Instance.bedsPoints[idList];
-        GameManager.Instance.freeBeds[idList] = true;
+        assignedBed = gameManager.bedsPoints[idList];
+        gameManager.freeBeds[idList] = true;
         stateMachine.idBedRef = idList;
     }
 

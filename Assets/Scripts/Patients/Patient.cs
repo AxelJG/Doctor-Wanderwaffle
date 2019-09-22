@@ -13,10 +13,12 @@ public class Patient : MonoBehaviour
     public AudioSource fartAudioSource, OKAudioSource, OhNoAudioSource, WowAudioSource;
     public SceneDisplay display;
     public ParticleSystem goodJobPS, badJobPS;
+    public GameManager gameManager;
 
 
     void Awake()
     {
+        gameManager = Camera.main.GetComponent<GameManager>();
         lifetime = pathology.timeOfLife;
 
         display.sprite = pathology.sprite;
@@ -24,7 +26,7 @@ public class Patient : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.RegisterPatient();
+        gameManager.RegisterPatient();
     }
 
     public void ReceiveActuator(Actuator actuator)
@@ -41,7 +43,7 @@ public class Patient : MonoBehaviour
                 
                 goodJobPS.Play();
                 WowAudioSource.Play();
-                GameManager.Instance.PatientCured();
+                gameManager.PatientCured();
                 Leave();
                 
                 return;
@@ -56,7 +58,7 @@ public class Patient : MonoBehaviour
             Debug.Log("Dude, how are you even a doctor?");
             badJobPS.Play();
             fartAudioSource.Play();
-            GameManager.Instance.WrongAction();
+            gameManager.WrongAction();
         }
     }
 

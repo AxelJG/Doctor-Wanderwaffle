@@ -11,6 +11,7 @@ public class ProgressBarAction : MonoBehaviour
     [HideInInspector]
     public bool grabObject, performAction;
     public UnityEvent onObjectReadyToGrab, onActionPerformed;
+    public GameManager gameManager;
 
     float _curTime = 0f;
     Slider _slider;
@@ -19,6 +20,7 @@ public class ProgressBarAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = Camera.main.GetComponent<GameManager>();
         _slider = GetComponent<Slider>();
         _slider.value = 0f;
     }
@@ -70,6 +72,6 @@ public class ProgressBarAction : MonoBehaviour
 
         grabObject = false;
         performAction = false;
-        GameManager.Instance.playerActionInprogress = false;
+        gameManager.playerActionInprogress = false;
     }
 }

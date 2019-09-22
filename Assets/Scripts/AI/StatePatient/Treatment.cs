@@ -8,13 +8,15 @@ public class Treatment : State {
     public GameObject head, body;
     public State sick;
     private NavMeshAgent agent;
+    public GameManager gameManager;
 
     private void OnEnable() {
+        gameManager = Camera.main.GetComponent<GameManager>();
         OutOfBed();
     }
 
     private void Start() {
-        treatmentPoint = GameManager.Instance.treatmentPoint;
+        treatmentPoint = gameManager.treatmentPoint;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -25,7 +27,7 @@ public class Treatment : State {
     }
 
     private void OutOfBed() {
-        this.transform.position = GameManager.Instance.bedsPoints[stateMachine.idBedRef].position;
+        this.transform.position = gameManager.bedsPoints[stateMachine.idBedRef].position;
         this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
         //Enabled components

@@ -15,11 +15,13 @@ public class Interactor : MonoBehaviour
     ProgressBarAction _progressBarAction;
 
     public GameObject workingParticleEffect;
+    private GameManager gameManager;
 
     Animator _animator;
 
     void Awake()
     {
+        gameManager = Camera.main.GetComponent<GameManager>();
         _progressBarAction = progressBar.GetComponent<ProgressBarAction>();
         _animator = GetComponent<Animator>();
     }
@@ -114,13 +116,13 @@ public class Interactor : MonoBehaviour
             {
                 _observedObject = hit.transform.gameObject;
 
-                GameManager.Instance.ActivateHUD(_observedObject);
+                gameManager.ActivateHUD(_observedObject);
             }
 
             return;
         }
 
-        GameManager.Instance.DeactivateHUD(_observedObject);
+        gameManager.DeactivateHUD(_observedObject);
         _observedObject = null;
     }
 
@@ -134,7 +136,7 @@ public class Interactor : MonoBehaviour
 
         _isGrabbingSomething = true;
 
-        GameManager.Instance.DeactivateHUD(_observedObject);
+        gameManager.DeactivateHUD(_observedObject);
         _grabbedActuator = _observedObject.GetComponent<ActuatorObject>();
         Debug.LogFormat("Grabbed object: {0}", _grabbedActuator);
         _grabbedActuator.Grab(grabPoint);
@@ -169,7 +171,7 @@ public class Interactor : MonoBehaviour
             Debug.LogWarning("Cannot activate progressbar in both modes at the same time", this);
         }
 
-        GameManager.Instance.playerActionInprogress = true;
+        gameManager.playerActionInprogress = true;
 
         _progressBarAction.grabObject = grabObject;
         _progressBarAction.performAction = performAction;
