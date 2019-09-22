@@ -109,6 +109,7 @@ public class Interactor : MonoBehaviour
 
         if (Physics.Raycast(grabPoint.position, grabPoint.TransformDirection(Vector3.forward), out hit, 1f))
         {
+            print(hit.transform.name);
             if (hit.transform.tag.Equals("Grabbable") || hit.transform.tag.Equals("Patient"))
             {
                 _observedObject = hit.transform.gameObject;
