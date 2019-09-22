@@ -1323,7 +1323,7 @@ MonoBehaviour:
   timerLevelTexts:
   - {fileID: 1312148353}
   - {fileID: 1238094630}
-  timeLevel: 90
+  timeLevel: 75
   bedsPoints:
   - {fileID: 6869917495707865770}
   - {fileID: 6869917495970000939}
@@ -3721,7 +3721,7 @@ PrefabInstance:
     - target: {fileID: 1751656355922407149, guid: 67056cc5cc32f204ab7a3e8a59bc099b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.62
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 1751656355922407149, guid: 67056cc5cc32f204ab7a3e8a59bc099b,
         type: 3}

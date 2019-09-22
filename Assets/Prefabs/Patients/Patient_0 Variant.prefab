@@ -814,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathology: {fileID: 11400000, guid: 3569fec187481a8459510950b687c3a0, type: 2}
+  isCured: 0
   fartAudioSource: {fileID: 1577259175}
   OKAudioSource: {fileID: 1755548181}
   OhNoAudioSource: {fileID: 1052203527}
@@ -946,6 +947,25 @@ MonoBehaviour:
   head: {fileID: 1911556345173364785}
   body: {fileID: 7920208899260914508}
   sick: {fileID: 5846424998195615173}
+--- !u!95 &791358725603961905
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892383394458286010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 125c2213f86d8fe41bd05954b0809559, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2ddd00817861f1a40be581225e258e91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1449470139612231652
 PrefabInstance:
   m_ObjectHideFlags: 0

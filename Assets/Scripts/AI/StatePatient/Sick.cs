@@ -9,16 +9,20 @@ public class Sick : State
     public GameObject head, body;
     private NavMeshAgent agent;
     private Transform assignedBed;
+    Animator _animator;
 
     private void OnEnable() {
         Visible();
     }
-
-    // Start is called before the first frame update
+    
+    // Start is called before the first frame updaate
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
         CheckFreeBed();
+
+        _animator.SetBool("isWalking", true);
     }
 
     // Update is called once per frame

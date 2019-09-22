@@ -7,6 +7,7 @@ public class Cured : State {
 
     private Transform exitPoint;
     private NavMeshAgent agent;
+    Animator _animator;
 
     private void OnEnable() {
         OutOfBed();
@@ -14,7 +15,10 @@ public class Cured : State {
 
     private void Start() {
         exitPoint = GameManager.Instance.exitPoint;
+        _animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+
+        _animator.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
