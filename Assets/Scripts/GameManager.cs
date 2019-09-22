@@ -20,6 +20,19 @@ public class GameManager : Singleton<GameManager>
     public float timeLevel = 60f;
     private bool countTimer = true;
 
+    [Header("Beds control")]
+    public List<Transform> bedsPoints;
+    public List<Transform> bedsAttendedPoints;
+
+    [Header("AI points to move")]
+    public Transform exitPoint;
+    public Transform operatingPoint;
+    public Transform treatmentPoint;
+    public Transform xRayPoint;
+
+    [HideInInspector]
+    public List<bool> freeBeds;
+
     [HideInInspector]
     public List<GameObject> medicalObjs;
     [HideInInspector]
@@ -37,6 +50,10 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     #region BASE
+    private void Awake() {
+        freeBeds = new List<bool>() { false, false, false };
+    }
+
     private void Update() {
         CountDown();
 
