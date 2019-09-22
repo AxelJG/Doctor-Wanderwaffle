@@ -29,10 +29,19 @@ public class NoteContent : MonoBehaviour
 
         AspectImage.sprite = pathology.sprite;
 
-        foreach (Transform cure in curesTransform) {
+        /*foreach (Transform cure in curesTransform) {
             for (int i = 0; i < pathology.actuators.Count; i++) {
                 cure.GetComponent<Image>().sprite = pathology.actuators[i].sprite;
             }
+
+            cure.GetComponent<Image>().sprite = pathology.actuators[i].sprite;
+        }*/
+
+        for (int i = 0; i < curesTransform.childCount -1; i++) {
+            if(i < pathology.actuators.Count) {
+                curesTransform.GetChild(i).GetComponent<Image>().sprite = pathology.actuators[i].sprite;
+            }
+            
         }
     }
 }
