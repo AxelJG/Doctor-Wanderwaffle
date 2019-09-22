@@ -1519,6 +1519,30 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 125c2213f86d8fe41bd05954b0809559, type: 3}
+    - target: {fileID: 7426435327676134221, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792966368, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171840219232507319, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171840219795378083, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171840220429449274, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c6ed02c9ad17f48b1509b8ee0fdd45, type: 3}
 --- !u!114 &1312148353 stripped
