@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 11
   name: "Permiso de operaci\xF3n"
   utility: "Usar s\xF3lo en caso de extrema necesidad"
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d34b269569564da4390e8b9186b659af, type: 3}
   grabbingTime: 0
   performanceTime: 0

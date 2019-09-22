@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5777f9e3055d54e949e1b0e51020db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   spriteImage: {fileID: 4095179155550824064}
   baseImage: {fileID: 4208427863090799242}
 --- !u!1 &8175974827021283579
@@ -326,7 +327,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 90
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &8175974827021283573
 MonoBehaviour:
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: d46f75e770051e54ba21b0cf639751dc, type: 2}
   actuatorData: {fileID: 11400000, guid: b385256775ef21c4cba50485011a595e, type: 2}
-  HUD: {fileID: 0}
+  HUD: {fileID: 1902199936}
 --- !u!23 &34165476932501927
 MeshRenderer:
   m_ObjectHideFlags: 0

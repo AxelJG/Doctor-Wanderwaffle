@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 13
   name: "Test sangu\xEDneo"
   utility: Igual es mejor ni mirarlo
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 83fff53389a501047994ccb89ad8491b, type: 3}
   grabbingTime: 0
   performanceTime: 2

@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 3
   name: Toalla
   utility: "Muy vers\xE1til cuando se combina con otros elementos"
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a360c4a07ec16864aa1d5fca9326f613, type: 3}
   grabbingTime: 0
   performanceTime: 3

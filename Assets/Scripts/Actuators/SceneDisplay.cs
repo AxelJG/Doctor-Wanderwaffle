@@ -6,12 +6,16 @@ using UnityEngine.UI;
 
 public class SceneDisplay : MonoBehaviour
 {
+    [HideInInspector]
+    public Sprite sprite;
     public Image spriteImage, baseImage;
 
     void Start()
     {
         GameManager.OnActivateHUD += TryActivateHUD;
         GameManager.OnDeactivateHUD += TryDeactivateHUD;
+
+        spriteImage.sprite = sprite;
     }
 
     void OnDestroy()

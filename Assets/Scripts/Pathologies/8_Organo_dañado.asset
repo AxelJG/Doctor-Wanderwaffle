@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "8_Organo_da\xF1ado"
   m_EditorClassIdentifier: 
   id: 8
-  namePathology: "Organo da\xF1ado"
+  namePathology: Apendicitis
   timeOfLife: 30
   difficulty: 4
   actuators:
@@ -25,4 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b385256775ef21c4cba50485011a595e, type: 2}
   - {fileID: 11400000, guid: 86d4cd1a43c83b94e8ed99e357048a7e, type: 2}
   - {fileID: 11400000, guid: 50c61248d6d530843918c49da8ea0bb1, type: 2}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1639b9b0c26a792459ce0782bf23003f, type: 3}

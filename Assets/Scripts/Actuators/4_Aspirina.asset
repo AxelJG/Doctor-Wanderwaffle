@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 4
   name: Aspirina
   utility: Es una aspirina
-  sprite: {fileID: 0}
-  loadingTime: 0
+  sprite: {fileID: 21300000, guid: 5021c802867c51b498abecd76145e22e, type: 3}
+  grabbingTime: 0
+  performanceTime: 0

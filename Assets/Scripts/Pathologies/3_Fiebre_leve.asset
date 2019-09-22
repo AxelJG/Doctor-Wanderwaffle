@@ -19,4 +19,4 @@ MonoBehaviour:
   actuators:
   - {fileID: 11400000, guid: b08991249cc2b5d409c61617109301e0, type: 2}
   - {fileID: 11400000, guid: e713592e9e6648d4695a0098b9b70301, type: 2}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 56f1eae81eebdbf488ff7867aa94c249, type: 3}

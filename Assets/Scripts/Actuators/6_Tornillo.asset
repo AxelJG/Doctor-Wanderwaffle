@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 6
   name: Tornillo
   utility: "Para cuando quieres que algo no se mueva jam\xE1s"
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ecf58ac6b789fe143bcf8c9339fff944, type: 3}
   grabbingTime: 0
   performanceTime: 3
