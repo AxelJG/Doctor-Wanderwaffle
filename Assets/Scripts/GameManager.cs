@@ -213,6 +213,7 @@ public class GameManager : MonoBehaviour
     #region Navigation Menu Click
 
     public void RetryLevel() {
+        Resume();
         SceneManager.LoadScene("SampleScene");
     }
 

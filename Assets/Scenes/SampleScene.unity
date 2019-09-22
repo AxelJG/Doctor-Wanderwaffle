@@ -4429,6 +4429,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3230258637432315769, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3230258636758879729, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4539,6 +4544,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00009098881
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00000040415034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785576, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258637742620028, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230258638393785577, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3230258636611709585, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4554,6 +4599,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 534669906}
+    - target: {fileID: 3230258638167367631, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
+        type: 3}
+      propertyPath: m_Text
+      value: "\xA1Has ganado! \xA1\xA1Gracias por jugar!!"
+      objectReference: {fileID: 0}
     - target: {fileID: 3230258638393785579, guid: c5282b4f2adbdc24ba37f7e80fd6ad32,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
