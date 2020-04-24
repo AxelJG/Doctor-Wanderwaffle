@@ -1,2 +1,3 @@
 # Doctor-Wanderwaffle
-Spain Game Devs Jam (Action/Reaction)
+GameJam Spain Game Devs
+Theme: Action/Reaction
